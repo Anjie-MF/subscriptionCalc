@@ -8,12 +8,14 @@ var subDuration = 1;
 //CREATE change event listeners
 subTypeElement.addEventListener("change", function (e) {
     subType = e.target.value;
-    console.log(subType);
+    //console.log(subType);
+    updateSubscriptionDiv()
 });
 
 subDurationElement.addEventListener("change", function (e) {
     subDuration = Number(e.target.value);
-    console.log(subDuration);
+    //console.log(subDuration);
+    updateSubscriptionDiv()
 });
 
 //use a function to calcuate the cost 
@@ -27,3 +29,5 @@ var updateSubscriptionDiv = function () {
     var total = subDuration * monthlyCost;
     result.innerText = `You have chosen ${subDuration} month ${subType} plan for $${total}`;
 };
+
+//CALL your function to update the DOM
